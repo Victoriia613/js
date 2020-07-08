@@ -166,6 +166,10 @@ console.log(users[5].age, users[5].status);
 // -Візьміть файл template1.html, підключіть до нього скрипт, і працюйте в ньому.
 
 // -- Напишіть код,  який за допомоги document.getElementById або document.getElementsByClassName або document.getElementsByTagName :
+
+
+
+
 // - отримує текст з параграфа з id "content"
 // - отримує текст з блоку з id "rules"
 // - замініть текст параграфа з id 'content' на будь-який інший
