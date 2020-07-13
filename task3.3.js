@@ -370,31 +370,26 @@ for (const user  of userS) {
 }
 
 // - За допомоги циклу проітерувати  масив users, записати кожного юзера в свій блок 
-//за допомоги 
-//document.createElement, розділивши всі властивості по своїм блокам , блок з адресою 
-//зробити окремим блоком, з блоками для кожної властивості.????????????????????????/?????
-// for (const user  of userS) {
-//     let userDiv = document.createElement('div');
-//     for (const item in user) {
-//     let itemDiv = document.createElement('div');
-//     itemDiv.innerText = user[item];
-//     // while (user.item) {
-//         console.log(user.address)
-//         for (const i in user[item]) {
-//         let addressDiv = document.createElement('div');
-//         addressDiv.innerText = user[item][i];
-//         itemDiv.appendChild(addressDiv);
-//         }
-//         // itemDiv.appendChild(addressDiv);
-//         }
-//         userDiv.appendChild(itemDiv);
-//     }
-//     document.body.appendChild(userDiv);
-//     }
-    // document.body.appendChild(userDiv);
- 
-
-
+//за допомоги document.createElement, розділивши всі властивості по своїм блокам , 
+//блок з адресою зробити окремим блоком, з блоками для кожної властивості.
+for (let i = 0; i < userS.length; i++) {
+    let userDiv = document.createElement('div');
+    for (const key in userS[i]) {
+        let divForEachProperty = document.createElement('div');
+        divForEachProperty.innerText = `${key}: ${userS[i][key]}`;
+        if (key === 'address') {
+        for (const prop in userS[i].address) {
+            let divForEachAddressProperty = document.createElement('div');
+            divForEachAddressProperty.innerText = `${prop}: ${userS[i].address[prop]}`;
+            divForEachProperty.appendChild(divForEachAddressProperty);
+        
+        }
+    }
+        userDiv.appendChild(divForEachProperty);}
+        document.body.appendChild(userDiv);
+        }
+        
+    
 
 
 // - Дано 2 масиви з рівною кількістю об'єктів.
@@ -417,7 +412,7 @@ for (let i = 0; i < usersWithId.length; i++)
         {
             if (usersWithId[i].id===citiesWithId[j].user_id)
             {
-                usersWithId[i]['address']=citiesWithId[j];
+                usersWithId[i].address=citiesWithId[j];
             }
         }
 
