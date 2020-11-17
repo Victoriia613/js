@@ -4,9 +4,9 @@ class User extends Component {
 
     state = { status: this.props.user.status };
 
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
 
     action = (user) => {
         user.status = !user.status;
